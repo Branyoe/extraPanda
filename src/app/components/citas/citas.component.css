@@ -1,0 +1,17 @@
+.chido{
+  border-radius: 10px;
+  border: solid 1px rgb(207, 197, 197);
+  background-color: white;
+}
+
+body{
+  background-image: url('https://p4.wallpaperbetter.com/wallpaper/40/912/870/moss-macro-blur-hd-wallpaper-preview.jpg');
+  height: 93.4vh;
+  background-attachment: fixed;
+  overflow: scroll;
+  background-size: cover;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

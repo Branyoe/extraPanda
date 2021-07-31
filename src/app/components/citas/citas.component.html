@@ -1,0 +1,33 @@
+<body>
+  <div class="row p-3  justify-content-evenly">
+    <div class="col-5 ">
+      <h1>Formulario</h1>
+      <form (submit)="agendar()">
+        <input type="text" [(ngModel)]="nombre" [ngModelOptions]="{standalone: true}" placeholder="Nombre" id="nombre" class="m-2 form-control">
+  
+        <input type="time" [(ngModel)]="time" [ngModelOptions]="{standalone: true}" placeholder="" id="time" class="m-2 form-control">
+  
+        <input type="date" [(ngModel)]="date" [ngModelOptions]="{standalone: true}" placeholder="" id="date" class="m-2 form-control">
+  
+        <textarea [(ngModel)]="sintomas" [ngModelOptions]="{standalone: true}" placeholder="Sintomas" id="sintomas" cols="" rows="1" class="m-2 form-control"></textarea>
+  
+        <button class="m-2 form-control btn-success" type="submit">Agendar</button>
+      </form>
+    </div>
+    <div class="col-5">
+      
+      <div *ngIf="citasV.length != 0" >
+        <div class="text-center"><h2>Tus citas</h2></div>
+        <div *ngFor="let cita of citasV; let index = index" class="chido m-2">
+          <p class="m-2"><span>Nombre: {{cita.nombre}}</span></p>
+          <p class="m-2"><span>Hora: {{cita.time}}</span></p>
+          <p class="m-2"><span>Fecha: {{cita.date}}</span></p>
+          <p class="m-2"><span>Síntomas: {{cita.sintomas}}</span></p>
+          <button (click)="eliminar(index)" class="form-control btn-danger">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
